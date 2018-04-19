@@ -9,5 +9,5 @@ const
 const app = express()
 
 app.use(history())
-app.use(serveStatic(path.join() + '/dist/spa-mat'))
+app.use(serveStatic(path.join() + '/dist/wpa-mat'))
 app.listen(port)
