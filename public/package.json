@@ -1,0 +1,10 @@
+{
+    "name": "appipering",
+    "version": "0.1.0",
+    "description": "Appipering",
+    "author": "Flavio",
+    "private": true,
+    "scripts": {
+      "postinstall": "npm install express"
+    }
+   }
