@@ -1,5 +1,5 @@
 {
-  "build": "quasar build",
+  "build": "quasar build -m pwa",
   "start": "node server.js",
   "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build",
   "name": "appipering",
@@ -11,7 +11,8 @@
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "deploy": "git subtree push — prefix public heroku master"
   },
   "dependencies": {
     "axios": "^0.18.0",
