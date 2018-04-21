@@ -7,7 +7,7 @@
   round
   glossy
   no-ripple
-/>
+  @click="showMessage()"/>
   </q-page>
 </template>
 
@@ -16,6 +16,17 @@
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  methods: {
+    showMessage () {
+      this.$q.notify({
+        color: 'purple-3',
+        textColor: 'purple-7',
+        message: 'Denize, TE AMO!',
+        icon: 'favorite',
+        position: 'center'
+      })
+    }
+  }
 }
 </script>
