@@ -35,9 +35,9 @@ export default {
         message: hint.hint,
         icon: 'favorite',
         position: 'center',
-        detail: 'Optional detail message.',
+        detail: 'Clique na TV!',
         actions: [
-          { icon: 'search', handler: () => this.openXvLink(hint.tags) } ] })
+          { icon: 'tv', handler: () => this.openXvLink(hint.tags) } ] })
     },
     getRamdomHint () {
       let random = this.hints[Math.floor(Math.random() * this.hints.length)]
@@ -45,17 +45,30 @@ export default {
     },
     openXvLink (tags) {
       openURL('https://www.xvideos.com/?k=' + tags + '&top')
+    },
+    redirect () {
+      this.$router.push('oops')
     }
   },
   mounted () {
     this.$q.localStorage.set('key', 'value')
-    let value = this.$q.localStorage.get.item('key')
-    this.$q.notify({
-      color: 'purple-3',
-      textColor: 'purple-7',
-      message: value,
-      icon: 'favorite',
-      position: 'center'
+    // let value = this.$q.localStorage.get.item('key')
+    this.$q.dialog({
+      title: 'Autenticação',
+      message: 'Para desfrutar você tem que informar a senha!',
+      prompt: {
+        model: '',
+        type: 'text' // optional
+      },
+      cancel: true,
+      color: 'secondary'
+    }).then(data => {
+      let pass = data
+      if (pass !== '021114') {
+        this.redirect()
+      }
+    }).catch(() => {
+      this.redirect()
     })
   }
 }

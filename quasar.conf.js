@@ -68,7 +68,7 @@ module.exports = function (ctx) {
       // Quasar plugins
       plugins: [
         'Notify', 'AddressbarColor', 'LocalStorage',
-        'SessionStorage'
+        'SessionStorage', 'Dialog'
       ],
       i18n: 'pt-br'
     },
