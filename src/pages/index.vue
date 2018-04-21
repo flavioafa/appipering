@@ -15,18 +15,48 @@
 </style>
 
 <script>
+import { openURL } from 'quasar'
 export default {
   name: 'PageIndex',
+  data () {
+    return {
+      hints: [
+        { 'id': 1, 'hint': 'Imagina você dando pra dois', 'tags': 'suruba', 'like': 1 },
+        { 'id': 2, 'hint': 'Dois paus na buceta', 'tags': 'swing', 'like': 0 },
+        { 'id': 3, 'hint': 'Você de 4 pra um estranho do pauzão', 'tags': 'suruba', 'like': 1 }]
+    }
+  },
   methods: {
     showMessage () {
+      let hint = this.getRamdomHint()
       this.$q.notify({
         color: 'purple-3',
         textColor: 'purple-7',
-        message: 'Denize, TE AMO!',
+        message: hint.hint,
         icon: 'favorite',
-        position: 'center'
-      })
+        position: 'center',
+        detail: 'Optional detail message.',
+        actions: [
+          { icon: 'search', handler: () => this.openXvLink(hint.tags) } ] })
+    },
+    getRamdomHint () {
+      let random = this.hints[Math.floor(Math.random() * this.hints.length)]
+      return random
+    },
+    openXvLink (tags) {
+      openURL('https://www.xvideos.com/?k=' + tags + '&top')
     }
+  },
+  mounted () {
+    this.$q.localStorage.set('key', 'value')
+    let value = this.$q.localStorage.get.item('key')
+    this.$q.notify({
+      color: 'purple-3',
+      textColor: 'purple-7',
+      message: value,
+      icon: 'favorite',
+      position: 'center'
+    })
   }
 }
 </script>
