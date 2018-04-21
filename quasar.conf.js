@@ -67,7 +67,7 @@ module.exports = function (ctx) {
       ],
       // Quasar plugins
       plugins: [
-        'Notify'
+        'Notify', 'AddressbarColor'
       ]
     },
     // animations: 'all' --- includes all animations
