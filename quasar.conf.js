@@ -68,7 +68,8 @@ module.exports = function (ctx) {
       // Quasar plugins
       plugins: [
         'Notify', 'AddressbarColor'
-      ]
+      ],
+      i18n: 'pt-br'
     },
     // animations: 'all' --- includes all animations
     animations: [
