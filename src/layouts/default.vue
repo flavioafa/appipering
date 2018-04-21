@@ -32,10 +32,10 @@
         link
         inset-delimiter
       >
-        <q-list-header>Essential Links</q-list-header>
+        <q-list-header>Links</q-list-header>
         <q-item @click.native="openURL('http://www.xvideos.com')">
           <q-item-side icon="tv" />
-          <q-item-main label="Xvideos" sublabel="quasar-framework.org" />
+          <q-item-main label="Xvideos" sublabel="xvideos.com" />
         </q-item>
       </q-list>
     </q-layout-drawer>
