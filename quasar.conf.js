@@ -83,7 +83,7 @@ module.exports = function (ctx) {
         description: 'Appipering',
         display: 'standalone',
         orientation: 'portrait',
-        background_color: '#ffffff',
+        background_color: '#ab47bc',
         theme_color: '#027be3',
         icons: [
           {
